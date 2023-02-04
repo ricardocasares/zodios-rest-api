@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`converts from C to F 1`] = `
+{
+  "scale": "C",
+  "value": 37,
+}
+`;
+
+exports[`converts from F to C 1`] = `
+{
+  "scale": "C",
+  "value": 37,
+}
+`;
+
+exports[`default parameter value: to 1`] = `
+{
+  "scale": "F",
+  "value": 98.6,
+}
+`;
+
+exports[`no parameters 1`] = `
+{
+  "context": "query.value",
+  "error": [
+    {
+      "code": "invalid_type",
+      "expected": "number",
+      "message": "Required",
+      "path": [],
+      "received": "undefined",
+    },
+  ],
+}
+`;
+
+exports[`requires parameter: value 1`] = `
+{
+  "context": "query.value",
+  "error": [
+    {
+      "code": "invalid_type",
+      "expected": "number",
+      "message": "Required",
+      "path": [],
+      "received": "undefined",
+    },
+  ],
+}
+`;

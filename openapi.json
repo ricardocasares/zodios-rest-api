@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Farenheit to Celsius API",
+    "version": "1.0.0",
+    "description": "A simple temperature converter"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/temperature": {
+      "get": {
+        "operationId": "convertDegrees",
+        "summary": "Temperature conversion",
+        "description": "Temperature conversion",
+        "tags": ["temperature"],
+        "parameters": [
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["F", "C"],
+              "default": "F"
+            },
+            "description": "Target scale",
+            "required": false
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Units",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "scale": {
+                      "type": "string",
+                      "enum": ["F", "C"]
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["scale", "value"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

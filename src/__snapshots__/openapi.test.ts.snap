@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`openapi matches snapshot 1`] = `
+{
+  "info": {
+    "description": "A simple temperature converter",
+    "title": "Farenheit to Celsius API",
+    "version": "1.0.0",
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/temperature": {
+      "get": {
+        "description": "Temperature conversion",
+        "operationId": "convertDegrees",
+        "parameters": [
+          {
+            "description": "Target scale",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "default": "F",
+              "enum": [
+                "F",
+                "C",
+              ],
+              "type": "string",
+            },
+          },
+          {
+            "description": "Units",
+            "in": "query",
+            "name": "value",
+            "required": true,
+            "schema": {
+              "type": "number",
+            },
+          },
+        ],
+        "requestBody": undefined,
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "scale": {
+                      "enum": [
+                        "F",
+                        "C",
+                      ],
+                      "type": "string",
+                    },
+                    "value": {
+                      "type": "number",
+                    },
+                  },
+                  "required": [
+                    "scale",
+                    "value",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Success",
+          },
+        },
+        "security": undefined,
+        "summary": "Temperature conversion",
+        "tags": [
+          "temperature",
+        ],
+      },
+    },
+  },
+  "servers": [
+    {
+      "url": "/",
+    },
+  ],
+}
+`;

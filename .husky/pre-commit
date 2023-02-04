@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+STAGED="$(git diff --staged --name-only)"
+echo "🔍  Looking for tests connected to your changes ..."
+npx jest --silent --passWithNoTests --findRelatedTests $STAGED
+echo "💅  Getting prettier"
+npx pretty-quick --staged
+echo "👷  Typechecking"
+npx tsc --noEmit --pretty
