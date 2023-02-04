@@ -1,10 +1,4 @@
 {
   "extends": "@tsconfig/node-lts-strictest/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@app/*": ["src/*"]
-    }
-  },
   "include": ["src/**/*.ts"]
 }

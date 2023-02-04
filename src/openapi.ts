@@ -1,5 +1,5 @@
 import { openApiBuilder } from "@zodios/openapi";
-import { spec } from "@app/api";
+import { spec } from "./api";
 
 export const document = openApiBuilder({
   title: "Farenheit to Celsius API",

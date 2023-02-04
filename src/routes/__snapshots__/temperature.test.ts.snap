@@ -14,7 +14,7 @@ exports[`converts from F to C 1`] = `
 }
 `;
 
-exports[`default parameter value: to 1`] = `
+exports[`default parameter [to=F] 1`] = `
 {
   "scale": "F",
   "value": 98.6,
@@ -36,7 +36,7 @@ exports[`no parameters 1`] = `
 }
 `;
 
-exports[`requires parameter: value 1`] = `
+exports[`requires parameter [value] 1`] = `
 {
   "context": "query.value",
   "error": [
