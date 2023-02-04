@@ -1,3 +1,3 @@
-import { document } from "@app/openapi";
+import { document as spec } from "@app/openapi";
 
-test("openapi matches snapshot", expect(document).toMatchSnapshot);
+test("spec matches snapshot", () => expect(spec).toMatchSnapshot());
