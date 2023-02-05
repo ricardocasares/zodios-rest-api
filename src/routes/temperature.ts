@@ -7,7 +7,7 @@ export const temperature = zodiosApp(spec).get(
   async (req, res) => {
     const temp = container.get("temp");
 
-    res.json({
+    res.status(200).json({
       scale: req.query.to,
       value: await temp.convert(req.query.to, req.query.value),
     });
