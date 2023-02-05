@@ -13,10 +13,11 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "run-p build:*",
-    "build:spec": "node -r @swc-node/register src/generate.ts > openapi.json",
+    "build:spec": "node -r @swc-node/register src/spec/generate.ts",
     "build:test": "jest -b --coverage --silent",
     "build:tsc": "tsc --noEmit",
     "dev": "run-p dev:* -l",
+    "dev:spec": "node --watch -r @swc-node/register src/spec/generate.ts",
     "dev:start": "node --watch -r @swc-node/register src/index.ts",
     "dev:test": "jest --watch --colors --errorOnDeprecated",
     "dev:tsc": "tsc --watch --noEmit --pretty",

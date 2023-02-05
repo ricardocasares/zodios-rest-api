@@ -1,4 +1,4 @@
-import type { Scales, TemperatureService } from "../models";
+import type { Scales, TemperatureService } from "../lib/models";
 
 export class LocalTemperatureService implements TemperatureService {
   async convert(to: Scales, value: number) {

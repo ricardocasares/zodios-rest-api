@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { apiBuilder, makeParameters } from "@zodios/core";
-import { scales } from "./models";
+import { scales } from "../lib/models";
 
 const parameters = makeParameters([
   {

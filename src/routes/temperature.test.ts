@@ -1,5 +1,5 @@
 import supertest from "supertest";
-import { container } from "../container";
+import { container } from "../services/container";
 import { temperature } from "./temperature";
 
 const convert = jest

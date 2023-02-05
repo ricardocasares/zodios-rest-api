@@ -1,6 +1,6 @@
 import { zodiosApp } from "@zodios/express";
-import { spec } from "../api";
-import { container } from "../container";
+import { spec } from "../spec/api";
+import { container } from "../services/container";
 
 export const temperature = zodiosApp(spec).get(
   "/temperature",
