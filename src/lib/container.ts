@@ -7,5 +7,6 @@ export class Container<C> {
 
   set(key: keyof C, value: C[keyof C]) {
     this.container[key] = value;
+    return this;
   }
 }
