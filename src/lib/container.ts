@@ -1,11 +1,11 @@
 export class Container<C> {
   constructor(private container: C) {}
 
-  get(key: keyof C) {
-    return this.container[key];
+  get<K extends keyof C>(key: K) {
+    return this.container[key] as C[K];
   }
 
-  set(key: keyof C, value: C[keyof C]) {
+  set<K extends keyof C>(key: keyof C, value: C[K]) {
     this.container[key] = value;
     return this;
   }

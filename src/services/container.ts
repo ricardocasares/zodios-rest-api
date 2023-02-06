@@ -1,7 +1,7 @@
 import { Container } from "../lib/container";
+import type { Dependencies } from "../lib/models";
 import { LocalTemperatureService } from "./localTemperature";
-import type { TemperatureService } from "../lib/models";
 
-export const container = new Container({
-  temp: new LocalTemperatureService() as TemperatureService,
+export const container = new Container<Dependencies>({
+  temp: new LocalTemperatureService(),
 });
