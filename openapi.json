@@ -5,11 +5,7 @@
     "version": "1.0.0",
     "description": "A simple temperature converter"
   },
-  "servers": [
-    {
-      "url": "/"
-    }
-  ],
+  "servers": [{ "url": "/" }],
   "paths": {
     "/temperature": {
       "get": {
@@ -21,20 +17,14 @@
           {
             "name": "to",
             "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": ["F", "C"],
-              "default": "F"
-            },
+            "schema": { "type": "string", "enum": ["F", "C"], "default": "F" },
             "description": "Target scale",
             "required": false
           },
           {
             "name": "value",
             "in": "query",
-            "schema": {
-              "type": "number"
-            },
+            "schema": { "type": "number" },
             "description": "Units",
             "required": true
           }
@@ -47,13 +37,8 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "scale": {
-                      "type": "string",
-                      "enum": ["F", "C"]
-                    },
-                    "value": {
-                      "type": "number"
-                    }
+                    "scale": { "type": "string", "enum": ["F", "C"] },
+                    "value": { "type": "number" }
                   },
                   "required": ["scale", "value"],
                   "additionalProperties": false
