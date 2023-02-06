@@ -8,7 +8,7 @@ const convert = jest
   .mockResolvedValueOnce(37)
   .mockResolvedValue(37);
 
-container.set("temp", { convert });
+container.set("temp", () => ({ convert }));
 
 test("no parameters", () =>
   supertest(temperature)
