@@ -21,6 +21,12 @@ exports[`default parameter [to=F] 1`] = `
 }
 `;
 
+exports[`errors 1`] = `
+{
+  "message": "Internal error",
+}
+`;
+
 exports[`no parameters 1`] = `
 {
   "context": "query.value",

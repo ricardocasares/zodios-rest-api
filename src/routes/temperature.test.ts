@@ -6,6 +6,7 @@ const convert = jest
   .fn()
   .mockResolvedValueOnce(98.6)
   .mockResolvedValueOnce(37)
+  .mockRejectedValueOnce(new Error("Fun"))
   .mockResolvedValue(37);
 
 container.set("temp", () => ({ convert }));
@@ -35,6 +36,13 @@ test("converts from C to F", () =>
     .get("/temperature")
     .query({ to: "C", value: 98.6 })
     .expect(200)
+    .expect(({ body }) => expect(body).toMatchSnapshot()));
+
+test("errors", () =>
+  supertest(temperature)
+    .get("/temperature")
+    .query({ to: "C", value: 98.6 })
+    .expect(500)
     .expect(({ body }) => expect(body).toMatchSnapshot()));
 
 test("converts from F to C", () =>

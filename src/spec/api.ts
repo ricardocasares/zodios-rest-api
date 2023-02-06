@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { apiBuilder, makeParameters } from "@zodios/core";
+import { apiBuilder, makeParameters, makeErrors } from "@zodios/core";
 import { scales } from "../lib/models";
 
 const parameters = makeParameters([
@@ -17,6 +17,16 @@ const parameters = makeParameters([
   },
 ]);
 
+const errors = makeErrors([
+  {
+    status: "default",
+    schema: z.object({
+      message: z.string(),
+    }),
+    description: "Default error",
+  },
+]);
+
 const response = z.object({
   scale: scales,
   value: z.number(),
@@ -28,5 +38,6 @@ export const spec = apiBuilder({
   alias: "convertDegrees",
   description: "Temperature conversion",
   response,
+  errors,
   parameters,
 }).build();
