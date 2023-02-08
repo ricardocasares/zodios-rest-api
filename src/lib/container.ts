@@ -1,12 +1,19 @@
-export class Container<C> {
-  private container = new Map<keyof C, C[keyof C]>();
+export interface IContainer<C> {
+  get<K extends keyof C>(key: K): C[K];
+  set<K extends keyof C>(
+    key: K,
+    cb: (get: <V extends keyof C>(k: V) => C[V]) => C[K]
+  ): void;
+}
+
+export class Container<C> implements IContainer<C> {
+  container = new Map<keyof C, C[keyof C]>();
 
   get<K extends keyof C>(key: K): C[K] {
     if (this.container.has(key)) {
-      // @ts-ignore
-      // Because TS is dumb:
+      // because TS is dumb
       // https://github.com/microsoft/TypeScript/issues/9619
-      return this.container.get(key);
+      return this.container.get(key) as C[K];
     }
 
     throw new Error(`Key '${String(key)}' not found inside the container`);
